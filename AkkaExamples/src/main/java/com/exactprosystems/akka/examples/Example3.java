@@ -33,7 +33,9 @@ public class Example3 {
 			final ActorRef myActor3 = system.actorOf(Props.create(MyActor.class), "MyActor3");
 			Future<Boolean> stopped = Patterns.gracefulStop(myActor3, Duration.create(5, TimeUnit.SECONDS));
 			Await.result(stopped, Duration.create(6, TimeUnit.SECONDS));
-		} catch (Exception e) { }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 
